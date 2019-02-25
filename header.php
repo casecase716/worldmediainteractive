@@ -22,36 +22,19 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'worldmediainteractive' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$worldmediainteractive_description = get_bloginfo( 'description', 'display' );
-			if ( $worldmediainteractive_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $worldmediainteractive_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+            <img src="<?php get_site_url();?>/wp-content/themes/worldmediainteractive/assets/WMI_LOGO.png">
 		</div><!-- .site-branding -->
 
+        <div class="signin-button">
+            <h3>Sign In / Join</h3>
+        </div>
+
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'worldmediainteractive' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
+            <img src="<?php get_site_url();?>/wp-content/themes/worldmediainteractive/assets/WMI_MENU_ICON.png">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
